@@ -1,7 +1,0 @@
-services:
-  - docker
-language: bash
-script:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t serious-comp/couchbase-server-sandbox .
-  - docker push serious-comp/couchbase-server-sandbox
