@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  test:
+    image: seriouscomp/couchbase-server-sandbox
+    build: .
+    ports:
+      - 8091:8091
+      - 11211:11211
+      - 11210:11210
+      - 11274:11274
+    environment:
+      - HY=hello
+      - BUCKETS= |-
+        'default;11274;memcached'

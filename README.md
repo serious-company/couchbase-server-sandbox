@@ -21,3 +21,6 @@ This image is configured as follows:
     * Admin credentials: Administrator / password
     * RBAC user with admin access to travel-sample bucket, with
       credentials admin / password
+
+## Reference
+- http://www.madhur.co.in/blog/2016/07/07/create-couchbase-bucket-docker.html
