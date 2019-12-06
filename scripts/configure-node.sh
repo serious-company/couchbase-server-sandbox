@@ -3,7 +3,6 @@
 ADMIN=admin
 PASSWORD=password
 DEFAULT_BUCKETS=(
-    'default;11211;memcached'
     'sample;11274;memcached'
 )
 BUCKETS="${BUCKETS:-$DEFAULT_BUCKETS}"
@@ -131,7 +130,7 @@ do
     bucketport=`echo $index | cut -d \; -f 2`
     buckettype=`echo $index | cut -d \; -f 3`
     if [ -n "$(echo ${buckets_list} | grep ${bucketname})" ]; then
-        out "Bucket ${bucketname} on port ${bucketport} using type ${buckettype} already exists"
+        echo "Bucket ${bucketname} on port ${bucketport} using type ${buckettype} already exists"
         continue
     fi
     couchbase-cli bucket-create -c 127.0.0.1:8091 -u ${ADMIN} -p ${PASSWORD} --bucket=${bucketname} --bucket-type=${buckettype} --bucket-port=${bucketport} --bucket-ramsize=100 --enable-flush=1 \
