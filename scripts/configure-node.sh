@@ -3,7 +3,8 @@
 ADMIN=admin
 PASSWORD=password
 DEFAULT_BUCKETS=(
-    'default;11274;memcached'
+    'default;11211;memcached'
+    'sample;11274;memcached'
 )
 BUCKETS="${BUCKETS:-$DEFAULT_BUCKETS}"
 : "${BUCKETS:?BUCKETSVariable not set or empty}"
